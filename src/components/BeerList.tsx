@@ -1,27 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BeerContext } from "../BeerContext";
 import { Beer } from "./Beer";
 import "./BeerList.css";
 
 export function BeerList() {
 	const [beerInput, setBeerInput] = useState("");
-	const [beers, setBeers] = useState([
-		"Coreff",
-		"Corona",
-		"Mort Subite",
-		"Guinness",
-		"Stella Artois",
-		"Carlsberg",
-		"Hoegaarden",
-		"Kronenbourg",
-		"Sainte Colombe",
-	]);
+	const { beers, setBeers } = useContext(BeerContext);
 
 	return (
 		<>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					setBeers([...beers, beerInput]);
+					setBeers((b) => [...b, beerInput]);
 					setBeerInput("");
 				}}
 			>
