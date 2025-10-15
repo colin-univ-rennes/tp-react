@@ -1,6 +1,8 @@
 # TP React
 
-[Colin Ozanne](https://finxol.io)
+Colin Ozanne
+
+Version live: [sur Deno Deploy](https://tp-react.finxol.deno.net/)
 
 ## Instructions
 
