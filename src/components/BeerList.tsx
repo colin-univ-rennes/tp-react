@@ -36,9 +36,8 @@ export function BeerList() {
 				<p>Aucune bière ajoutée pour le moment.</p>
 			) : (
 				<ul>
-					{beers.map((beer, index) => (
-						// biome-ignore lint/suspicious/noArrayIndexKey: le sujet demande d'utiliser l'index...
-						<Beer key={index} beer={beer} />
+					{beers.map((beer) => (
+						<Beer key={beer.id} beer={beer} />
 					))}
 				</ul>
 			)}
