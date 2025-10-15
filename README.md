@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# TP React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Colin Ozanne](https://finxol.io)
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+Versions: <br>
+Node: v22.20.0
+pnpm: 10.18.1
 
-### `npm start`
+- Installer les dépendances avec `pnpm install`
+- Démarrer le serveur avec `pnpm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Composants
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### BeerContext
 
-### `npm test`
+Contexte React qui gère l'état global des bières. Il fournit :
+- Une liste de bières préchargée
+- Une fonction pour ajouter une bière
+- Une fonction pour supprimer une bière
+- Une fonction pour mettre à jour la liste complète
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Beer
 
-### `npm run build`
+Composant qui affiche une bière individuelle. Il montre :
+- Le nom de la bière
+- Le début de son identifiant unique
+- Un bouton pour la supprimer de la liste
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### BeerList
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Composant principal qui affiche la liste des bières. Il contient :
+- Un formulaire pour ajouter une nouvelle bière (composant `BeerInput`)
+- La liste des bières existantes
+- Un message si la liste est vide
+- Chaque bière est affichée via le composant `Beer`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Routage avec React Router
 
-### `npm run eject`
+L'application utilise React Router pour gérer la navigation entre les pages. Le routage est configuré dans le fichier `index.tsx` et comprend :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Une barre de navigation présente sur toutes les pages avec des liens vers :
+  - La page d'accueil (`/`)
+  - La page "À propos" (`/about`)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Les routes disponibles sont :
+- `/` : Page d'accueil qui affiche la liste des bières
+- `/about` : Page "À propos" qui présente l'auteur du TP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Le routage est implémenté avec `createBrowserRouter` de react-router-dom v7, et les composants sont chargés de manière statique.
