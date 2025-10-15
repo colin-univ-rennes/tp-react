@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
-import App from "./routes/App";
 import { About } from "./routes/about";
+import App from "./routes/App";
 
 import reportWebVitals from "./reportWebVitals";
 
