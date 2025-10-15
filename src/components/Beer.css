@@ -4,6 +4,23 @@ li {
     justify-content: space-between;
     padding: 8px 16px;
     border-bottom: 1px solid #ccc;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.beer-name {
+    font-weight: bold;
+}
+
+.beer-id {
+    font-style: italic;
+    font-size: 12px;
+    text-align: left;
 }
 
 button {

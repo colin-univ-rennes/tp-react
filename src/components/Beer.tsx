@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import { BeerContext } from "../BeerContext";
+import { BeerContext, type Beer as TBeer } from "../BeerContext";
 
 import "./Beer.css";
 
-export function Beer({ beer }: { beer: string }) {
-	const { beers, setBeers } = useContext(BeerContext);
+export function Beer({ beer }: { beer: TBeer }) {
+	const { removeBeer } = useContext(BeerContext);
 
 	return (
 		<li>
-			<span>{beer}</span>
-			<button
-				type="button"
-				onClick={() => setBeers(beers.filter((b) => b !== beer))}
-			>
+			<div>
+				<span className="beer-name">{beer.name}</span>
+				<span className="beer-id">{beer.id.split("-")[0]}</span>
+			</div>
+			<button type="button" onClick={() => removeBeer(beer.id)}>
 				Remove
 			</button>
 		</li>
