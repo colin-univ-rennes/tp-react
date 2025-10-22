@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { createContext, useState } from "react";
 
 export type Beer = {
@@ -32,7 +33,7 @@ export function useBeers() {
 
 	const [beers, setBeers] = useState(
 		b.map((beer) => ({
-			id: crypto.randomUUID(),
+			id: nanoid(),
 			name: beer,
 		})),
 	);
@@ -42,7 +43,7 @@ export function useBeers() {
 		setBeers((b) => [
 			...b,
 			{
-				id: crypto.randomUUID(),
+				id: nanoid(),
 				name: beer,
 			},
 		]);
